@@ -10,9 +10,7 @@ Include jQuery, /toaster.js and .toaster.css.
 
 Add an empty div with an id of toaster just after the body tag of your page.
 
-<pre>
 	<div id="toaster"></div>
-</pre>
 
 Initialize the toaster.
 
