@@ -1,0 +1,42 @@
+/*Toaster*/
+#toaster-area {
+	position: fixed;
+	top: 0;
+	left: 0;
+	width: 100%;
+	overflow: visible;
+	z-index: 10000;
+}
+.toaster-bar {
+	position: absolute;
+	top: 0;
+	left: 0;
+	color: black;
+	border-bottom: 2px solid rgba(0, 0, 0, 0.07);
+	width: 100%;
+	cursor: pointer;
+	height: 22px;
+}
+.toaster-bar-container {
+	position: relative;
+	display: block;
+	width: 100%;
+	overflow: visible;
+}
+.toaster-bar-bkg {
+	background-color: #fff;
+	opacity: .75;
+	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=95)";
+	filter: alpha(opacity=95);
+	position: static;
+}
+.toaster-bar, .toaster-bar-bkg {
+	padding: 1.2em 0;
+}
+.toaster-bar-contents {
+	width: 740px;
+	margin: 0 auto;
+	text-align: left;
+	position: relative;
+	font-size: 150%;
+}
