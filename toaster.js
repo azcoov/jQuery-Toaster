@@ -42,10 +42,12 @@ www.coovtech.com
 
 		function init(elem, arg, options) {
 			$(elem).html($.toaster.defaults.toasterHtml);
+			$(".toaster-bar-contents").css('color', options.color);
 			$(".toaster-bar-bkg").css('backgroundColor', options.backgroundColor);
 		}
 
 		function show(elem, arg, options) {
+		    $(".toaster-bar-contents").css('color', options.color);
 		    $(".toaster-bar-bkg").css('backgroundColor', options.backgroundColor);
 			$(".toast-info").html(arg);
 			$(".toaster-bar-container").show('slide', { direction: 'up' }, 1000).delay(2500).hide('slide', { direction: 'up' }, 1000);
