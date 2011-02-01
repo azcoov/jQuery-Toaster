@@ -1,5 +1,9 @@
 # Toaster
 
+Toaster is a Twitter-like implementation of a notification slide-down. If you have ever changed a setting on your Twitter profile and seen the notification toaster, then you'll know exactly what this is. 
+
+Toaster can be launched automatically, or on demand.
+
 ## Usage
 
 Include jQuery, /toaster.js and .toaster.css.
