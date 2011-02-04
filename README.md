@@ -33,3 +33,7 @@ If you want to pop the toaster later on after the toaster has been initialized, 
 You can change the default color of the toaster by supplying a backgroundColor.
 
     $('#toaster').toaster({ backgroundColor: '#666699' });	
+	
+### Currently working on
+
+I'm going to add more default options, such as opacity & font	
