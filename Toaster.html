@@ -46,6 +46,14 @@
                 return false;
             });
 			
+			$('#example6').click(function () {
+                $.toaster.defaults.backgroundColor = '#666699';
+				$.toaster.defaults.opacity = $("#opacity").val();
+                $.toaster.defaults.color = '#fff';
+                $(this).toaster('show', 'An error occured.');
+                return false;
+            });
+			
 		});
 	</script>
 </head>
@@ -78,6 +86,12 @@
 		<div>
 			<b>Show the toaster on error</b><br />
 			<a href="#" id="example5">Click to throw an error</a>
+		</div><br />
+		
+		<div>
+			<b>Change the opacity</b><br />
+			<input id="opacity" value=".30" type="text" /><br />
+			<a href="#" id="example6">Click to change opacity</a>
 		</div>
 
 </body>

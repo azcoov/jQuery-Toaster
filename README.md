@@ -34,6 +34,10 @@ You can change the default color of the toaster by supplying a backgroundColor.
 
     $('#toaster').toaster({ backgroundColor: '#666699' });	
 	
+you can change the opacity as well.
+
+    $('#toaster').toaster({ backgroundColor: '#666699', opacity: '.30' });	
+	
 ### Currently working on
 
 I'm going to add more default options, such as opacity & font	
