@@ -6,6 +6,10 @@ Toaster can be launched automatically, or on demand.
 
 [See an example](http://www.coovtech.com/projects/toaster/).
 
+## Dependencies
+
+[jQuery](http://jquery.com/) & [jQuery UI](http://jqueryui.com/) are required.
+
 ## Usage
 
 Include jQuery, /toaster.js and .toaster.css.

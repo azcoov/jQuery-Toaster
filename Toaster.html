@@ -1,0 +1,84 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+   "http://www.w3.org/TR/html4/loose.dtd">
+
+<html lang="en">
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>jQuery Toaster</title>
+	<meta name="generator" content="TextMate http://macromates.com/">
+	<meta name="author" content="Billy Coover">
+	<!-- Date: 2011-02-04 -->
+	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/jquery-ui.min.js" type="text/javascript"></script>
+	<script src="toaster.js" type="text/javascript"></script>
+	<link href="toaster.css" rel="stylesheet" type="text/css" />
+	<script>
+		$(function () {
+			$('#toaster').toaster();
+			
+			$('#example1').click(function () {
+                $(this).toaster('show', $(this).text());
+                return false;
+            });
+
+            $('#example2').click(function () {
+                $.toaster.defaults.backgroundColor = '#3300FF';
+                $(this).toaster('show');
+                return false;
+            });
+
+            $('#example3').click(function () {
+                $.toaster.defaults.backgroundColor = '#FFFF00';
+                $(this).toaster('show');
+                return false;
+            });
+
+            $('#example4').click(function () {
+                $.toaster.defaults.backgroundColor = '#B59046';
+                $(this).toaster('show');
+                return false;
+            });
+
+            $('#example5').click(function () {
+                $.toaster.defaults.backgroundColor = '#FF7474';
+                $.toaster.defaults.color = '#fff';
+                $(this).toaster('show', 'An error occured.');
+                return false;
+            });
+			
+		});
+	</script>
+</head>
+<body>
+	
+	<div id="toaster">Toaster <em>example</em></div>
+	
+	<h2>jQuery Toaster</h2>
+
+		<div>	
+			<b>On click of an element</b><br />
+			<a href="#" id="example1">Toast from hyperlink</a>
+		</div><br />
+
+		<div>
+			<b>With some color</b><br />
+			<a href="#" id="example2">Toast will be blue</a>
+		</div><br />
+
+		<div>
+			<b>Butter my toast</b><br />
+			<a href="#" id="example3">Yummy!</a>
+		</div><br />
+
+		<div>
+			<b>Burnt my toast</b><br />
+			<a href="#" id="example4">doh!</a>
+		</div><br />
+
+		<div>
+			<b>Show the toaster on error</b><br />
+			<a href="#" id="example5">Click to throw an error</a>
+		</div>
+
+</body>
+</html>
