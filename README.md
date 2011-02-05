@@ -6,10 +6,6 @@ Toaster can be launched automatically, or on demand.
 
 [See an example](http://www.coovtech.com/projects/toaster/).
 
-## Dependencies
-
-[jQuery](http://jquery.com/) & [jQuery UI](http://jqueryui.com/) are required.
-
 ## Usage
 
 Include jQuery, /toaster.js and .toaster.css.
@@ -41,3 +37,7 @@ You can change the default color of the toaster by supplying a backgroundColor.
 ### Currently working on
 
 I'm going to add more default options, such as opacity & font	
+
+## Dependencies
+
+[jQuery](http://jquery.com/) & [jQuery UI](http://jqueryui.com/) are required.
