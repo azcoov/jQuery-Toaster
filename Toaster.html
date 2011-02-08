@@ -54,6 +54,14 @@
                 return false;
             });
 			
+			$('#example7').click(function () {
+                $.toaster.defaults.backgroundColor = '#fff';
+                $.toaster.defaults.color = '#222';
+				$.toaster.defaults.sticky = true;
+                $(this).toaster('show', 'Sticky toaster. Click me to un-stick me.');
+                return false;
+            });
+			
 		});
 	</script>
 </head>
@@ -92,6 +100,11 @@
 			<b>Change the opacity</b><br />
 			<input id="opacity" value=".30" type="text" /><br />
 			<a href="#" id="example6">Click to change opacity</a>
+		</div><br />
+		
+		<div>
+			<b>Sticky toaster</b><br />
+			<a href="#" id="example7">Click to show a sticky toaster.</a>
 		</div>
 
 </body>

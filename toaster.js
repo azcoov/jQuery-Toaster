@@ -50,7 +50,14 @@ www.coovtech.com
 		    $(".toaster-bar-contents").css('color', options.color);
 		    $(".toaster-bar-bkg").css('backgroundColor', options.backgroundColor).css('opacity', options.opacity);
 			$(".toast-info").html(arg);
-			$(".toaster-bar-container").show('slide', { direction: 'up' }, 1000).delay(2500).hide('slide', { direction: 'up' }, 1000);
+			if(options.sticky == true) {
+				$(".toaster-bar-container").show('slide', { direction: 'up' }, 1000);
+				$(".toaster-bar-container").click(function() {
+					$(".toaster-bar-container").hide('slide', { direction: 'up' }, 1000);
+				});
+			} else {
+				$(".toaster-bar-container").show('slide', { direction: 'up' }, 1000).delay(2500).hide('slide', { direction: 'up' }, 1000);
+			}
 			return false;
 		}
 	};
@@ -59,6 +66,7 @@ www.coovtech.com
 		backgroundColor: '#fff',
 		color: '#000',
 		opacity: '.95',
+		sticky: false,
 		toasterHtml: '\
 			<div id="toaster-area"> \
 				<div class="toaster-bar-container" style="display:none;"> \
