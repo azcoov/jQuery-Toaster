@@ -25,7 +25,7 @@
 }
 .toaster-bar-bkg {
 	background-color: #fff;
-	opacity: .75;
+	opacity: .80;
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=95)";
 	filter: alpha(opacity=95);
 	position: static;
