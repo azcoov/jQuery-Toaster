@@ -5,7 +5,7 @@ Copyrights are lame!
 www.coovtech.com	
 */
 (function ($) {
-	var $bkg, $contents, $container, $info;
+	var $bkg, $contents, $container, $info, $area;
 	$.fn.extend({
 		//plugin name - toaster
 		toaster: function (options, arg) {
@@ -43,10 +43,11 @@ www.coovtech.com
 
 		function init(elem, arg, options) {
 			$(elem).html($.toaster.defaults.toasterHtml);
-			$contents  = $('.toaster-bar-contents').css({ color: options.color });
-			$bkg       = $('.toaster-bar-bkg').css({ backgroundColor: options.backgroundColor, opacity: options.opacity });
-			$container = $('.toaster-bar-container');
-			$info      = $(".toast-info");
+			$area      = $('#toaster-area');
+			$bkg       = $area.find('.toaster-bar-bkg').css({ backgroundColor: options.backgroundColor, opacity: options.opacity });
+			$container = $area.find('.toaster-bar-container');
+			$contents  = $container.find('.toaster-bar-contents').css({ color: options.color });
+			$info      = $contents.find(".toast-info");
 		}
 		
 		function sync() {
@@ -55,10 +56,10 @@ www.coovtech.com
 
 		function show(elem, arg, options) {
 		    $contents.css('color', options.color);
-			$container.stop().css({ top: -9000 });
+			$area.stop().css({ top: -9000 });
 			$info.html(arg);
 			$bkg.css({ backgroundColor: options.backgroundColor, opacity: options.opacity, height: $container.css('height') });
-			$container
+			$area
 				.css({ top: -$container.height() })
 				.animate( { top: 0 }, { duration: 1000, step: sync, complete: sync } )
 				.delay( 2500 )
