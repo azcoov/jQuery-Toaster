@@ -7,6 +7,7 @@
 	<title>jQuery Toaster</title>
 	<meta name="generator" content="TextMate http://macromates.com/">
 	<meta name="author" content="Billy Coover">
+	<!-- Date: 2011-02-04 -->
 	<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.4.2/jquery.min.js" type="text/javascript"></script>
 	<script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.8.2/jquery-ui.min.js" type="text/javascript"></script>
 	<script src="toaster.js" type="text/javascript"></script>
@@ -60,12 +61,6 @@
                 $(this).toaster('show', 'Sticky toaster. Click me to un-stick me.');
                 return false;
             });
-            
-            $('#example8').click(function () {
-                $.toaster.defaults.backgroundColor = '#CC99FF';
-                $(this).toaster('show', 'Lorem ');
-                return false;
-            });
 			
 		});
 	</script>
@@ -111,11 +106,6 @@
 			<b>Sticky toaster</b><br />
 			<a href="#" id="example7">Click to show a sticky toaster.</a>
 		</div>
-        
-        <div>
-			<b>Really long message</b><br />
-			<a href="#" id="example8">Lorem Ipsum</a>
-		</div><br />
 
 </body>
 </html>

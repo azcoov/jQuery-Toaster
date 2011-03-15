@@ -5,7 +5,6 @@ Copyrights are lame!
 www.coovtech.com	
 */
 (function ($) {
-	var $bkg, $contents, $container, $info, $area;
 	$.fn.extend({
 		//plugin name - toaster
 		toaster: function (options, arg) {
@@ -43,35 +42,21 @@ www.coovtech.com
 
 		function init(elem, arg, options) {
 			$(elem).html($.toaster.defaults.toasterHtml);
-			$area      = $('#toaster-area');
-			$bkg       = $area.find('.toaster-bar-bkg').css({ backgroundColor: options.backgroundColor, opacity: options.opacity });
-			$container = $area.find('.toaster-bar-container');
-			$contents  = $container.find('.toaster-bar-contents').css({ color: options.color });
-			$info      = $contents.find(".toast-info");
-		}
-		
-		function sync() {
-			$bkg.css({ top: $container.css('top') });
+			$(".toaster-bar-contents").css('color', options.color);
+			$(".toaster-bar-bkg").css('backgroundColor', options.backgroundColor).css('opacity', options.opacity);
 		}
 
 		function show(elem, arg, options) {
-		    $contents.css('color', options.color);
-			$area.stop().css({ top: -9000 });
-			$info.html(arg);
-			$bkg.css({ backgroundColor: options.backgroundColor, opacity: options.opacity, height: $container.css('height') });
-            if(options.sticky == true) {
-				$area.click(function() {
-					$area.animate( { top: -$container.height() }, { duration: 1000, step: sync, complete: sync });
+		    $(".toaster-bar-contents").css('color', options.color);
+		    $(".toaster-bar-bkg").css('backgroundColor', options.backgroundColor).css('opacity', options.opacity);
+			$(".toast-info").html(arg);
+			if(options.sticky == true) {
+				$(".toaster-bar-container").show('slide', { direction: 'up' }, 1000);
+				$(".toaster-bar-container").click(function() {
+					$(".toaster-bar-container").hide('slide', { direction: 'up' }, 1000);
 				});
-                $area
-                    .css({ top: -$container.height() })
-                    .animate( { top: 0 }, { duration: 1000, step: sync, complete: sync } );
 			} else {
-				$area
-                    .css({ top: -$container.height() })
-                    .animate( { top: 0 }, { duration: 1000, step: sync, complete: sync } )
-                    .delay( 2500 )
-                    .animate( { top: -$container.height() }, { duration: 1000, step: sync, complete: sync });
+				$(".toaster-bar-container").show('slide', { direction: 'up' }, 1000).delay(2500).hide('slide', { direction: 'up' }, 1000);
 			}
 			return false;
 		}
