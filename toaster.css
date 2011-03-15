@@ -1,7 +1,7 @@
 /*Toaster*/
 #toaster-area {
 	position: fixed;
-	top: 0;
+	top: -9000px;
 	left: 0;
 	width: 100%;
 	overflow: visible;
@@ -28,7 +28,10 @@
 	opacity: .75;
 	-ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=95)";
 	filter: alpha(opacity=95);
-	position: static;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
 }
 .toaster-bar, .toaster-bar-bkg {
 	padding: 1.2em 0;
