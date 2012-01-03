@@ -4,7 +4,7 @@ Toaster is a Twitter-like implementation of a notification slide-down. If you ha
 
 Toaster can be launched automatically, or on demand.
 
-[See an example](http://www.coovtech.com/projects/toaster/).
+[See an example](http://www.coovtech.com/projects/toaster).
 
 ## Usage
 
