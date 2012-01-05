@@ -5,7 +5,6 @@ Copyrights are lame!
 www.coovtech.com	
 */
 (function ($) {
-	var $bkg, $contents, $container, $info, $area;
 	$.fn.extend({
 		//plugin name - toaster
 		toaster: function (options, arg) {
@@ -25,7 +24,7 @@ www.coovtech.com
 	$.toaster = function (elem, options, arg) {
 		if (options && typeof (options) == 'string') {
 			if (options == 'show') {
-			    show(elem, arg, $.toaster.defaults);
+				show(elem, arg, $.toaster.defaults);
 			}
 			return;
 		} else {
@@ -43,39 +42,23 @@ www.coovtech.com
 
 		function init(elem, arg, options) {
 			$(elem).html($.toaster.defaults.toasterHtml);
-			$area      = $('#toaster-area');
-			$bkg       = $area.find('.toaster-bar-bkg').css({ backgroundColor: options.backgroundColor, opacity: options.opacity });
-			$container = $area.find('.toaster-bar-container');
-			$contents  = $container.find('.toaster-bar-contents').css({ color: options.color });
-			$info      = $contents.find(".toast-info");
-		}
-		
-		function sync() {
-			$bkg.css({ top: $container.css('top') });
+			$(".toaster-bar-contents").css('color', options.color);
+			$(".toaster-bar-bkg").css('backgroundColor', options.backgroundColor).css('opacity', options.opacity);
 		}
 
 		function show(elem, arg, options) {
-		    $contents.css('color', options.color);
-			$area.stop().css({ top: -9000 });
-			$info.html(arg);
-			$bkg.css({ backgroundColor: options.backgroundColor, opacity: options.opacity, height: $container.css('height') });
-            if(options.sticky == true) {
-                $area
-                    .css({ top: -$container.height() })
-                    .animate( { top: 0 }, { duration: 1000, step: sync, complete: sync } );
-                
-                $area.click(function() {
-					$area.animate( { top: -$container.height() }, { duration: 1000, step: sync, complete: sync });
+			$(".toaster-bar-contents").css('color', options.color);
+			$(".toaster-bar-bkg").css('backgroundColor', options.backgroundColor).css('opacity', options.opacity);
+			$(".toast-info").html(arg);
+			if (options.sticky == true) {
+				$(".toaster-bar-container").show('slide', { direction: 'up' }, 1000);
+				$(".toaster-bar-container").click(function () {
+					$(".toaster-bar-container").hide('slide', { direction: 'up' }, 1000);
 				});
-                
-            } else {            
-                $area
-                    .css({ top: -$container.height() })
-                    .animate( { top: 0 }, { duration: 1000, step: sync, complete: sync } )
-                    .delay( 2500 )
-                    .animate( { top: -$container.height() }, { duration: 1000, step: sync, complete: sync });
+			} else {
+				$(".toaster-bar-container").show('slide', { direction: 'up' }, 1000).delay(2500).hide('slide', { direction: 'up' }, 1000);
 			}
-            return false;
+			return false;
 		}
 	};
 
@@ -83,17 +66,17 @@ www.coovtech.com
 		backgroundColor: '#fff',
 		color: '#000',
 		opacity: '.95',
-        sticky: false,
+		sticky: false,
 		toasterHtml: '\
-			<div id="toaster-area">\
-				<div class="toaster-bar-bkg"></div>\
-				<div class="toaster-bar-container">\
-					<div class="toaster-bar">\
-						<div class="toaster-bar-contents">\
-							<div class="toast toast-info"></div>\
-						</div>\
-					</div>\
-				</div>\
+			<div id="toaster-area"> \
+				<div class="toaster-bar-container" style="display:none;"> \
+					<div class="toaster-bar-bkg" style="display: block; height: 22px; "></div> \
+					<div class="toaster-bar" style="display: block; "> \
+						<div class="toaster-bar-contents"> \
+							<div class="toast toast-info" ></div> \
+						</div> \
+					</div> \
+				</div> \
 			</div>'
 	};
 })(jQuery);
