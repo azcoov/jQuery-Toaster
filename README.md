@@ -28,15 +28,23 @@ If you want to pop the toaster later on after the toaster has been initialized, 
 		$(this).toaster('show', 'Hello world!');
 	});
 	
-### Customization
+### Customizing
 
-You can change the default color of the toaster by supplying a backgroundColor.
+To customize your toaster, you can pass options *à la jquery-ui*.
 
-    $('#toaster').toaster({ backgroundColor: '#666699' });	
-	
-you can change the opacity as well.
+For example, to change the toaster's opacity :
 
-    $('#toaster').toaster({ backgroundColor: '#666699', opacity: '.30' });	
+    $('#toaster').toaster({ opacity: '.95' });	
+
+#### Options
+
+Available options are :
+
+- `sticky`: if `true` the toaster will stick to your window, but you can still close it with a click. If `false` the toaster will disappear automatically.
+- `toasterHtml`: set this option to completely replace the default toaster's html.
+- `backgroundColor`: background color of the toaster
+- `color`: font color of the toaster.
+- `opacity`: opacity of the toaster.
 	
 ### Currently working on
 
